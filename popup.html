@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Price Tracker</title>
+    <style>
+        button:disabled {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Price Tracker</h1>
+    <button id="trackButton">Track</button>
+
+    <script>
+        const trackButton = document.getElementById('trackButton');
+
+        trackButton.addEventListener('click', () => {
+            trackButton.disabled = true;
+        });
+    </script>
+</body>
+</html>
