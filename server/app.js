@@ -38,21 +38,20 @@ app.post("/product", (req, res) => {
   sendInitialEmail(email, productURL, desiredPrice);
 });
 
-// Periodic price check every 60 seconds
 setInterval(async () => {
   if (products.length === 0) {
     return;
   }
 
-  for (const product of products) {
-    const { productURL, desiredPrice, email } = product;
+  for (let i = products.length - 1; i >= 0; i--) {
+    const { productURL, desiredPrice, email } = products[i];
 
-    // Fetch the current price
     const currentPrice = await fetchCurrentPrice(productURL);
     console.log(currentPrice);
 
     if (currentPrice !== null && currentPrice <= desiredPrice) {
       sendEmail(email, productURL, desiredPrice, currentPrice);
+      products.splice(i, 1);
     }
   }
 }, 10000);
