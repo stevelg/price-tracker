@@ -3,22 +3,48 @@
 <head>
     <title>Price Tracker</title>
     <style>
+        body {
+            width: 400px;
+            height: 200px;
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .price-container {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        .price-container div {
+            margin-right: 10px;
+        }
+        .price-container input {
+            width: 100px;
+            margin-right: 10px;
+        }
         button:disabled {
             background-color: gray;
+        }
+        #errorMessage {
+            color: red;
+            display: none;
         }
     </style>
 </head>
 <body>
     <h1>Price Tracker</h1>
-    <p id="price">Price will appear here</p>
-    <script src="popup.js"></script>
-    <button id="trackButton">Track</button>
-    <script>
-        const trackButton = document.getElementById('trackButton');
+    <div class="price-container">
+        <div id="price">Price will appear here</div>
+        <input id="desiredPrice" type="number" placeholder="Desired Price">
+        <button id="trackButton">Track</button>
+    </div>
 
-        trackButton.addEventListener('click', () => {
-            trackButton.disabled = true;
-        });
-    </script>
+    <label for="emailInput">Email:</label>
+    <input id="emailInput" type="email" placeholder="Enter your email">
+    <button id="saveEmailButton">Save Email</button>
+    <div id="errorMessage"></div>
+
+    <script src="popup.js"></script>
+
 </body>
 </html>
