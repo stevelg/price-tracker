@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Price Tracker</title>
     <style>
-        body {
-            width: 400px;
-            height: 200px;
-            margin: 0;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .price-container {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-        }
-        .price-container div {
-            margin-right: 10px;
-        }
-        .price-container input {
-            width: 100px;
-            margin-right: 10px;
-        }
-        button:disabled {
-            background-color: gray;
-        }
-        #errorMessage {
-            color: red;
-            display: none;
-        }
+      body {
+        width: 400px;
+        height: 200px;
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .price-container {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+      }
+      .price-container div {
+        margin-right: 10px;
+      }
+      .price-container input {
+        width: 100px;
+        margin-right: 10px;
+      }
+      button:disabled {
+        background-color: gray;
+      }
+      #errorMessage {
+        color: red;
+        display: none;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Price Tracker</h1>
     <div class="price-container">
-        <div id="price">Price will appear here</div>
-        <input id="desiredPrice" type="number" placeholder="Desired Price">
-        <button id="trackButton">Track</button>
+      <div id="price">Price will appear here</div>
+      <input id="desiredPrice" type="number" placeholder="Desired Price" />
+      <button id="trackButton">Track</button>
+      <div id="successMessage" style="color: green; display: none">Success!</div>
     </div>
 
     <label for="emailInput">Email:</label>
-    <input id="emailInput" type="email" placeholder="Enter your email">
+    <input id="emailInput" type="email" placeholder="Enter your email" />
     <button id="saveEmailButton">Save Email</button>
     <div id="errorMessage"></div>
 
     <script src="popup.js"></script>
-
-</body>
+  </body>
 </html>
